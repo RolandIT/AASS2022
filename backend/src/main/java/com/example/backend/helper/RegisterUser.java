@@ -1,31 +1,14 @@
-package com.example.backend.data_model;
+package com.example.backend.helper;
 
-public class User {
-    private long id;
+public class RegisterUser {
     private String username;
     private String password;
     private int type;
 
-
-    public User(long id, String username, String password, int type){
-        this.id = id;
+    public RegisterUser(String username, String password, int type) {
         this.username = username;
         this.password = password;
         this.type = type;
-    }
-
-    public User(String username, String password, int type) {
-        this.username = username;
-        this.password = password;
-        this.type = type;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getUsername() {
@@ -52,9 +35,6 @@ public class User {
         this.type = type;
     }
 
-    @Override
-    public String toString(){
-        String text = "%s (%d)";
-        return String.format(text, username, id);
-    }
+
+
 }
