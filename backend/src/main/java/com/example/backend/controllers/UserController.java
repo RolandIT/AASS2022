@@ -4,6 +4,7 @@ import com.example.backend.BackendApplication;
 import com.example.backend.data_model.User;
 import com.example.backend.helper.LoginBody;
 import com.example.backend.helper.RegisterUser;
+import com.example.backend.helper.UserCustomer;
 import com.example.backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,8 +21,8 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("user/login")
-    public User login(@RequestBody LoginBody loginBody){
-        User loggedIn = userService.login(loginBody);
+    public UserCustomer login(@RequestBody LoginBody loginBody){
+        UserCustomer loggedIn = userService.login(loginBody);
         if(loggedIn == null)
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Username or password is incorrect");
         return loggedIn;

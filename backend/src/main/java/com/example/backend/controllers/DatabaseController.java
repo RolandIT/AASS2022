@@ -6,11 +6,14 @@ import com.example.backend.data_model.Customer;
 import com.example.backend.data_model.Repair;
 import com.example.backend.data_model.User;
 import com.example.backend.helper.RegisterForm;
+import com.example.backend.helper.RepairBody;
+import com.example.backend.helper.UserCustomer;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class DatabaseController {
+    private final int CUSTOMER = 1;
     private Connection db;
     private final String CONNECTION_URL = "jdbc:postgresql://localhost:5432/backend";
 
@@ -23,7 +26,7 @@ public class DatabaseController {
         }
     }
 
-    public User login(String username, String password){
+    public UserCustomer login(String username, String password){
         BackendQueries loginQuery = BackendQueries.LOGIN_USER;
         PreparedStatement statement;
         try {
@@ -32,10 +35,17 @@ public class DatabaseController {
             statement.setString(2, password);
             ResultSet resultSet = statement.executeQuery();
 
-            User loggedIn = null;
+            UserCustomer loggedIn = null;
             if(resultSet.next()){
-                loggedIn = new User(resultSet.getInt(1), resultSet.getString(2),
+                User user = new User(resultSet.getInt(1), resultSet.getString(2),
                         resultSet.getString(3), resultSet.getInt(4));
+                loggedIn = new UserCustomer(user, null, false);
+                if(user.getType() == CUSTOMER) {
+                    Customer customer = new Customer(resultSet.getLong(5), resultSet.getString(6),
+                            resultSet.getString(7), resultSet.getString(8), resultSet.getString(9), user.getId());
+                    loggedIn.setCustomer(customer);
+                    loggedIn.setCustomer(true);
+                }
             }
             return loggedIn;
         } catch (SQLException e) {
@@ -219,6 +229,32 @@ public class DatabaseController {
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public long insertCarRepair(Repair repair){
+        BackendQueries insertCarQuery = BackendQueries.INSERT_CARS_REPAIRS;
+        PreparedStatement preparedStatement;
+
+        try {
+            preparedStatement = db.prepareStatement(insertCarQuery.getQuery(), Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1, repair.getDescription());
+            preparedStatement.setInt(2, repair.getState());
+            preparedStatement.setDouble(3, repair.getCost());
+            preparedStatement.setLong(4, repair.getIdCar());
+            int affectedRows = preparedStatement.executeUpdate();
+            if(affectedRows == 0) {
+                return affectedRows;
+            }
+            ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
+            if(generatedKeys.next()){
+                repair.setId(generatedKeys.getLong(1));
+                return  repair.getId();
+            }
+            else return -1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return e.getErrorCode();
         }
     }
 

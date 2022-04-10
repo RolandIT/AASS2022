@@ -12,4 +12,7 @@ public class RepairsService {
     public ArrayList<Repair> getCarsRepairs(long car_id){
         return BackendApplication.dbController.getCarsRepairs(car_id);
     }
+    public long insertCarRepair(Repair repair){
+        return BackendApplication.dbController.insertCarRepair(repair);
+    }
 }
