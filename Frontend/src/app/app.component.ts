@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'FE';
+  title = 'AutoServise';
 }

@@ -1,0 +1,13 @@
+<div class="home">
+    <div class="home-header">
+        <app-header (onLogout)="logout()"></app-header>
+    </div>
+    <div class="home-content">
+        <div *ngIf="dataService.currentUser.type != 1" class="home-content-menu">
+
+        </div>
+        <div class="home-content-main">
+            <ng-Content *ngComponentOutlet="renderService.actualContent"></ng-Content>
+        </div>
+    </div>
+</div>

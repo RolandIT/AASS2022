@@ -1,0 +1,31 @@
+<div class="car-detail">
+    <div class="car-detail-top">
+        <div class="title-box">
+            <p>{{dataService.selectedCar.type}}</p>
+            <div class="back-button">
+                <button  (click)="back()">
+                    <img class= "icon" src = "../../../assets/icons/back.svg"/>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="car-detail-info">
+        <div class="car-detail-info-box">
+            <p class="attribute-value">{{dataService.selectedCar.spz}}</p>
+            <p class="attribute-name">License</p>
+        </div>
+        <div class="car-detail-info-box">
+            <p class="attribute-value">{{dataService.selectedCar.manufacture_date}}</p>
+            <p class="attribute-name">Date of manufacture</p>
+        </div>
+    </div>
+    <div class="car-detail-repairs">
+        <div class="title-box">
+            <p>List of repairs</p>
+        </div>
+        <div *ngFor = "let repair of dataService.selectedCar.repairs" class="car-card-info">
+            <app-repair-card [repair]="repair">
+            </app-repair-card>
+        </div>
+    </div>
+</div>

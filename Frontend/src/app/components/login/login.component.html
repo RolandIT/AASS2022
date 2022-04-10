@@ -1,25 +1,21 @@
-<mat-card class="login-card">
-    <mat-card-header>
-      <mat-card-title>Login</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <div class="login-name">
-            <mat-form-field class="login-name-field" appearance="fill">
-                <mat-label>Username</mat-label>
-                <input matInput type="text">
-              </mat-form-field>
-        </div>
-        <div class="login-password">
-            <mat-form-field class="login-password-field" appearance="fill">
-                <mat-label>Enter your password</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'">
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button>
-              </mat-form-field>
-        </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>Login</button>
-    </mat-card-actions>
-  </mat-card>
+<div class="login">
+  <div class="login-card">
+    <div class="login-card-header">
+      <h1>Login</h1>
+    </div>
+      
+    <div class="login-element">
+        <p>Username</p>
+        <input [(ngModel)]="username">
+    </div>
+    <div class="login-element">
+        <p>Password</p>
+        <input type="password" [(ngModel)]="password">
+    </div>
+    <div class="login-card-buttons">
+      <button class="login-button" (click)="handleLogin()">Login</button>
+    </div>
+
+  </div>
+</div>
+<router-outlet></router-outlet>

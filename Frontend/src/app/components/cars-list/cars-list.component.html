@@ -1,0 +1,9 @@
+<div class="header">
+    <h1>List of available cars</h1>
+</div>
+<div class="cars-list">
+    <div *ngFor = "let car of dataService.carsList" class="car-card-info">
+        <app-car-card [carModel]="car">
+        </app-car-card>
+    </div>
+</div>

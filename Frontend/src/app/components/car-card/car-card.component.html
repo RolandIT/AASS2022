@@ -1,0 +1,20 @@
+<div class="car-card"  (click)="carCardClick()">
+    <div class="car-card-header">
+        <h1>{{carModel.type}}</h1>
+    </div>
+    <div class="car-card-info-column">
+        <img class= "icon" src = "../../../assets/icons/license.svg"/>
+        <div class="car-card-info-row">
+            <p class="attribute-value">{{carModel.spz}}</p>
+            <p class="attribute-name">License</p>
+        </div>
+    </div>
+
+    <div class="car-card-info-column">
+        <img class= "icon" src = "../../../assets/icons/calendar.svg"/>
+        <div class="car-card-info-row">
+            <p class="attribute-value">{{carModel.manufacture_date}}</p>
+            <p class="attribute-name">Date of manufacture</p>
+        </div>
+    </div>
+</div>

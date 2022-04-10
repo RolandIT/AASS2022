@@ -1,3 +1,15 @@
+@import "./styles/color";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { 
+    background-color: $colour_main_light;
+    display: flex;
+    justify-content: center;
+    height: 100%; }
+body {
+     margin: 0; 
+     font-family: Roboto, "Helvetica Neue", sans-serif; 
+    }
+
+button:hover{
+    cursor: pointer;
+}

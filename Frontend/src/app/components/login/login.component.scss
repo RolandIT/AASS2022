@@ -1,16 +1,68 @@
-.login-card{
-    text-align: center;
+@import "../../../styles/color";
+
+.login{
+    display:flex;
+    height: 100%;
+    align-items: center;
+    border-radius: 10px;
+
+    &-card{
+        margin: 0;
+        top: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background-color: rgba($colour_main_dark, 0.65);
+        color: $colour_main_text;
+        border-radius: 10px;
+
+        &-header{
+            display: flex;
+            justify-content: center;
+            background-color: $colour_accent_dark;
+            width: 100%;
+            border-radius: 10px 10px 0px 0px;
+
+            h1{
+                margin: 15px;
+            }
+        }
+    }
+
+    &-button{
+        margin: 10px;
+        width: 80px;
+        height: 30px;
+        border:solid;
+        background-color: $colour_accent_dark;
+        border-radius: 8px;
+        border-width: 1px;
+        border-color: $colour_main_text;
+        color: $colour_main_text;
+    }
 }
 
-.login-card{
-    text-align: center;
-    max-width:750px;
+input{
+    height: 30px;
+    min-width: 200px;
+    color: $colour_main_text;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid;
+    border-color: $colour_accent_dark;
+
 }
 
-.login-name-field{
-    width:200px;
+input:focus{
+    outline: none;
 }
 
-.mat-form-field{
-    width:350px;
- }
+.login-element{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px;
+}
