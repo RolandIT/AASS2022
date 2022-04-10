@@ -17,14 +17,16 @@ public class CarController {
     CarService carService;
 
     @GetMapping("cars/{id}")
-    public ArrayList<Car> getUsersCarList(@RequestParam(value = "id") long id){
+    public ArrayList<Car> getUsersCarList(@PathVariable(value = "id") long id){
         ArrayList<Car> listOfCars = carService.getUsersCarList(id);
         if(listOfCars == null)
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No cars found");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Something went wrong");
+        if(listOfCars.isEmpty())
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT, "No cars for this user");
         return listOfCars;
     }
-    @GetMapping("cars/{spz}")
-    public ArrayList<Car> getCarsFiltered(@RequestParam(value = "spz", defaultValue = "") String spz){
+    @GetMapping("cars/spz/{spz}")
+    public ArrayList<Car> getCarsFiltered(@PathVariable(value = "spz") String spz){
         ArrayList<Car> listOfCars = carService.getCarsFiltered(spz);
         if(listOfCars == null)
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No cars found");
