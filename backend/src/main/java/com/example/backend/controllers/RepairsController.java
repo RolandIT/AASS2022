@@ -6,6 +6,7 @@ import com.example.backend.services.RepairsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
@@ -17,15 +18,15 @@ public class RepairsController {
     private RepairsService repairsService;
 
     @GetMapping("repairs/{id}")
-    public ArrayList<Repair> getCarsRepairs(@RequestParam(value = "id") long car_id){
+    public ArrayList<Repair> getCarsRepairs(@PathVariable(value = "id") long car_id){
         ArrayList<Repair> listOfRepairs = repairsService.getCarsRepairs(car_id);
         if(listOfRepairs == null)
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No repairs found");
         return listOfRepairs;
     }
-
-    @PostMapping("repairs/")
-    public long insertCarRepair(RepairBody repair){
+// add repair, add car
+    @PostMapping("repairs")
+    public long insertCarRepair(@RequestBody RepairBody repair){
         long newId = repairsService.insertCarRepair(new Repair(-1, repair.getDescription(),
                 repair.getState(), repair.getCost(), repair.getIdCar()));
         if(newId == -1)

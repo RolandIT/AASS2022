@@ -1,5 +1,6 @@
 package com.example.backend.helper;
 
+
 public class RepairBody {
     private String description;
     private int state;
@@ -13,6 +14,13 @@ public class RepairBody {
         this.idCar = idCar;
     }
 
+    public RepairBody() {
+        this.description = "Test desc";
+        this.state = 1;
+        this.cost = 420.69;
+        this.idCar = 6;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -22,7 +30,7 @@ public class RepairBody {
     }
 
     public int getState() {
-        return state;
+        return this.state;
     }
 
     public void setState(int state) {
@@ -30,7 +38,7 @@ public class RepairBody {
     }
 
     public double getCost() {
-        return cost;
+        return this.cost;
     }
 
     public void setCost(double cost) {
@@ -38,7 +46,7 @@ public class RepairBody {
     }
 
     public long getIdCar() {
-        return idCar;
+        return this.idCar;
     }
 
     public void setIdCar(long idCar) {
