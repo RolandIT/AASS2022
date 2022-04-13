@@ -17,6 +17,10 @@ public class CarService {
         return BackendApplication.dbController.getCarList(spz);
     }
 
+    public ArrayList<Car> getCars(){
+        return BackendApplication.dbController.getCars();
+    }
+
     public long registerCar(RegisterCar car){
         Car newCar = new Car(-1, car.getSpz(), car.getYearOfManufacture(), car.getBrand(), car.getIdOwner());
         return BackendApplication.dbController.registerCar(newCar);
