@@ -32,6 +32,15 @@ public class CarController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No cars found");
         return listOfCars;
     }
+
+    @GetMapping("cars/")
+    public ArrayList<Car> getCars(){
+        ArrayList<Car> listOfCars = carService.getCars();
+        if(listOfCars == null)
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No cars found");
+        return listOfCars;
+    }
+
     @PostMapping("cars/register")
     public long registerCar(@RequestBody RegisterCar registerCar){
         long registeredId = carService.registerCar(registerCar);

@@ -75,43 +75,43 @@ public class DatabaseController {
         User toRegister = new User(registerForm.getUsername(), registerForm.getPassword(), registerForm.getType());
         Customer newCustomer = new Customer(registerForm.getName(), registerForm.getSurname(),
                 registerForm.getPhoneNumber(), registerForm.getOpNumber());
-        try {
-            db.setAutoCommit(false);
-            long registeredId = registerUser(toRegister);
-            if(registeredId == 0){
-                registeredId = getUserId(toRegister.getUsername());
-                if(registeredId <= 0) return registeredId;
-            }
-            newCustomer.setAccount_id(registeredId);
-            BackendQueries registerCustomer = BackendQueries.INSERT_CUSTOMER;
-            try{
-                //NAME, SURNAME, PHONE_NUMBER, OP_NUMBER
-                PreparedStatement preparedStatement = db.prepareStatement(registerCustomer.getQuery(),
-                        Statement.RETURN_GENERATED_KEYS);
-                preparedStatement.setString(1, newCustomer.getName());
-                preparedStatement.setString(2, newCustomer.getSurname());
-                preparedStatement.setString(3, newCustomer.getPhoneNumber());
-                preparedStatement.setString(4, newCustomer.getOpNumber());
-                preparedStatement.setLong(5, newCustomer.getAccount_id());
+        UserCustomer loggedInId = login(registerForm.getUsername(), registerForm.getPassword());
+        long registeredId = -1;
+        if(loggedInId == null){
+            registeredId = registerUser(toRegister);
+        }
+        else if(loggedInId.getCustomer() == null){
+            registeredId = loggedInId.getUser().getId();
+        }
+        else if(loggedInId.getCustomer() != null){
+            return -1;
+        }
+        newCustomer.setAccount_id(registeredId);
+        BackendQueries registerCustomer = BackendQueries.INSERT_CUSTOMER;
+        try{
+            //NAME, SURNAME, PHONE_NUMBER, OP_NUMBER
+            PreparedStatement preparedStatement = db.prepareStatement(registerCustomer.getQuery(),
+                    Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1, newCustomer.getName());
+            preparedStatement.setString(2, newCustomer.getSurname());
+            preparedStatement.setString(3, newCustomer.getPhoneNumber());
+            preparedStatement.setString(4, newCustomer.getOpNumber());
+            preparedStatement.setLong(5, newCustomer.getAccount_id());
 
-                int affectedRows = preparedStatement.executeUpdate();
-                if(affectedRows == 0) {
-                    return affectedRows;
-                }
-                ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
-                if(generatedKeys.next()){
-                    newCustomer.setId(generatedKeys.getLong(1));
-                    return newCustomer.getId();
-                }
-                else return -1;
-            }catch (SQLException e){
-                e.printStackTrace();
-                return e.getErrorCode();
+            int affectedRows = preparedStatement.executeUpdate();
+            if(affectedRows == 0) {
+                return affectedRows;
             }
+            ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
+            if(generatedKeys.next()){
+                newCustomer.setId(generatedKeys.getLong(1));
+                return newCustomer.getId();
+            }
+            else return registeredId;
         } catch (SQLException e) {
             e.printStackTrace();
-            return e.getErrorCode();
         }
+        return registeredId;
     }
 
     public long registerUser(User user){
@@ -168,6 +168,28 @@ public class DatabaseController {
         try {
             preparedStatement = db.prepareStatement(getUsersCarsQuery.getQuery());
             preparedStatement.setString(1, spz);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                Car car = new Car(resultSet.getLong(1),
+                        resultSet.getString(2),
+                        resultSet.getInt(3),
+                        resultSet.getString(4),
+                        resultSet.getInt(5));
+                cars.add(car);
+            }
+            return cars;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public ArrayList<Car> getCars(){
+        ArrayList<Car> cars = new ArrayList<>();
+        BackendQueries getUsersCarsQuery = BackendQueries.GET_CARS;
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = db.prepareStatement(getUsersCarsQuery.getQuery());
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 Car car = new Car(resultSet.getLong(1),
@@ -258,4 +280,26 @@ public class DatabaseController {
         }
     }
 
+    public ArrayList<Customer> getFilteredCustomers(String surname){
+        ArrayList<Customer> customers = new ArrayList<>();
+        BackendQueries filterCustomers = BackendQueries.FILTER_CUSTOMER;
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = db.prepareStatement(filterCustomers.getQuery());
+            preparedStatement.setString(1, surname);
+            ResultSet results = preparedStatement.executeQuery();
+
+            while(results.next()){
+                Customer customer = new Customer(results.getLong(1),
+                        results.getString(2),
+                        results.getString(3),
+                        results.getString(4),
+                        results.getString(5));
+                customers.add(customer);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return customers;
+    }
 }
