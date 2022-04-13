@@ -1,7 +1,7 @@
 <div class="car-detail">
     <div class="car-detail-top">
         <div class="title-box">
-            <p>{{dataService.selectedCar.type}}</p>
+            <p>{{dataService.selectedCar.brand}}</p>
             <div class="back-button">
                 <button  (click)="back()">
                     <img class= "icon" src = "../../../assets/icons/back.svg"/>
@@ -15,13 +15,18 @@
             <p class="attribute-name">License</p>
         </div>
         <div class="car-detail-info-box">
-            <p class="attribute-value">{{dataService.selectedCar.manufacture_date}}</p>
+            <p class="attribute-value">{{dataService.selectedCar.yearOfManufacture}}</p>
             <p class="attribute-name">Date of manufacture</p>
         </div>
     </div>
     <div class="car-detail-repairs">
         <div class="title-box">
             <p>List of repairs</p>
+            <div *ngIf="dataService.currentUser.user.type === 2" class="add-button">
+                <button  (click)="edit()">
+                    <img class= "icon" src = "../../../assets/icons/add.svg"/>
+                </button>
+            </div>
         </div>
         <div *ngFor = "let repair of dataService.selectedCar.repairs" class="car-card-info">
             <app-repair-card [repair]="repair">

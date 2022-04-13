@@ -1,17 +1,17 @@
 import { Repair } from './repair.type';
 
 export class Car{
-    id!: String;
-    repairs!: Repair[];
-    manufacture_date!: String;
-    spz!: String;
-    type!: String;
+    id?: number;
+    repairs?: Repair[];
+    yearOfManufacture?: String;
+    spz?: String;
+    brand?: String;
+    idOwner?: number;
 
-    constructor(id: String, manufacture_date: String, spz: String, type: String){
+    constructor(id?: number, yearOfManufacture?: String, spz?: String, brand?: String){
         this.id = id;
-        this.manufacture_date = manufacture_date;
+        this.yearOfManufacture = yearOfManufacture;
         this.spz = spz;
-        this.type = type;
+        this.brand = brand;
     }
-
 }

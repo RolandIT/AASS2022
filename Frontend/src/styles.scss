@@ -13,3 +13,10 @@ body {
 button:hover{
     cursor: pointer;
 }
+
+.mat-dialog-container{
+    display: flex !important;
+    justify-content: center;
+    background-color: $colour_accent_light;
+    align-items: center;
+}

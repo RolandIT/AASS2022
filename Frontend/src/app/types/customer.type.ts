@@ -4,4 +4,5 @@ export class customer{
     cars!: Car[];
     name!: String;
     surname!: String;
+    id!: number;
 }

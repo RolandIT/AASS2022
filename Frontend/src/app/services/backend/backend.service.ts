@@ -7,6 +7,10 @@ import { catchError, retry } from 'rxjs/operators';
 import { HttpHeaders } from '@angular/common/http';
 import { User } from 'src/app/types/user.type';
 import { Repair } from 'src/app/types/repair.type';
+import { loggedUser } from 'src/app/types/loggedUser.type';
+import { RegisterCustomer } from 'src/app/types/registerCustomer.type';
+import { Userfilter } from 'src/app/types/user-filter.type';
+import { customer } from 'src/app/types/customer.type';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +29,7 @@ export class BackendService {
 
   login(username: String, password: String){
     let user = new User(username, password);
-    return this.http.post<User>(this.url.concat('/user/login'), user, {headers: this.header});
+    return this.http.post<loggedUser>(this.url.concat('/user/login'), user, {headers: this.header});
   }
 
   loadCars(userId: Number){
@@ -38,7 +42,31 @@ export class BackendService {
       return this.http.get<Car[]>(this.url.concat(`/cars/${userId}`), {headers: this.header});
   }
 
-  loadRepairs(carId: String): Repair[]{
-      return [{} as Repair, {} as Repair ];
+  loadRepairs(carId?: number){
+      // return [{} as Repair, {} as Repair ];
+      return this.http.get<Repair[]>(this.url.concat(`/repairs/${carId}`), {headers: this.header});
+  }
+
+  loadAllCars(){
+    return this.http.get<Car[]>(this.url.concat(`/cars/`), {headers:this.header});
+  }
+
+  addNewRepair(repair: Repair){
+    console.log(repair);
+    return this.http.post<void>(this.url.concat(`/repairs/`), repair, {headers: this.header});
+  }
+
+  addNewCar(car: Car){
+    console.log(car);
+    return this.http.post<number>(this.url.concat(`/cars/register`), car, {headers: this.header});
+  }
+
+  addNewUser(user: RegisterCustomer){
+    return this.http.post<void>(this.url.concat(`/customer/register`), user, {headers: this.header});
+  }
+
+  loadUsers(user: Userfilter){
+    return this.http.post<customer[]>(this.url.concat(`/customer/filter`), user, {headers: this.header});
+
   }
 }

@@ -1,0 +1,33 @@
+<div class="new-repair-form">
+    <div class="title-box">
+        <p>New repair</p>
+    </div>
+    <div class="new-repair-details">
+        <div class="repair-column">
+            <div class="repair-row">
+                <select [(ngModel)]="data.repair.state" required>
+                    <option value=1>Accepted</option>
+                    <option value=2>Being repaired</option>
+                    <option value=3>Waiting for parts</option>
+                    <option value=4>Repaired</option>
+                </select>
+                <p class="attribute-name">State</p>
+            </div>
+
+            <div class="repair-row">
+                <input [(ngModel)]="data.repair.cost">
+                <p class="attribute-name">Cost</p>
+            </div>
+        </div>
+        
+
+        <div class="repair-row">
+            <textarea [(ngModel)]="data.repair.description"></textarea>
+            <p class="attribute-name">Description</p>
+        </div>
+
+        <div class="repair-row">
+            <button (click)="onCloseDialog()">Add</button>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 <div class="car-card"  (click)="carCardClick()">
     <div class="car-card-header">
-        <h1>{{carModel.type}}</h1>
+        <h1>{{carModel.brand}}</h1>
     </div>
     <div class="car-card-info-column">
         <img class= "icon" src = "../../../assets/icons/license.svg"/>
@@ -13,8 +13,8 @@
     <div class="car-card-info-column">
         <img class= "icon" src = "../../../assets/icons/calendar.svg"/>
         <div class="car-card-info-row">
-            <p class="attribute-value">{{carModel.manufacture_date}}</p>
-            <p class="attribute-name">Date of manufacture</p>
+            <p class="attribute-value">{{carModel.yearOfManufacture}}</p>
+            <p class="attribute-name">Year of manufacture</p>
         </div>
     </div>
 </div>

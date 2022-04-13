@@ -1,1 +1,11 @@
-<p>repair-card works!</p>
+<div class="repair-card" (click)="repairCardClick()">
+    <div class="text-box">
+        <p class="attribute-value">{{repairState}}</p>
+        <p class="attribute-name">State</p>
+    </div>
+
+    <div class="text-box">
+        <p class="attribute-value">{{repair.description}}</p>
+        <p class="attribute-name">Description</p>
+    </div>
+</div>

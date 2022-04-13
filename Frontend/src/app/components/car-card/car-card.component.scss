@@ -6,9 +6,15 @@
     padding: 20px;
     display: flex;
     border-radius: 5px;
+    border: solid 2px $colour_accent_light;
     flex-direction: column;
     background-color: $colour_accent_light;
     color: $colour_main_text;
+
+    &:hover{
+        border: solid 2px $colour_accent_dark;
+        cursor: pointer;
+    }
 
     &-header{
         display: flex;

@@ -15,11 +15,19 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarCardComponent } from './components/car-card/car-card.component';
 import { FormsModule } from '@angular/forms'
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {ReactiveFormsModule} from '@angular/forms';
 
 //services
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { CarsListComponent } from './components/cars-list/cars-list.component';
 import { RepairCardComponent } from './components/repair-card/repair-card.component';
+import { RepairDetailComponent } from './components/repair-detail/repair-detail.component';
+import { NewCarFormComponent } from './components/new-car-form/new-car-form.component';
+import { NewUserFormComponent } from './components/new-user-form/new-user-form.component';
+import { NewRepairFormComponent } from './components/new-repair-form/new-repair-form.component';
 
 
 @NgModule({
@@ -33,9 +41,14 @@ import { RepairCardComponent } from './components/repair-card/repair-card.compon
     CarDetailComponent,
     CarsListComponent,
     RepairCardComponent,
+    RepairDetailComponent,
+    NewCarFormComponent,
+    NewUserFormComponent,
+    NewRepairFormComponent,
 
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -43,7 +56,10 @@ import { RepairCardComponent } from './components/repair-card/repair-card.compon
     MatIconModule,
     MatInputModule,
     MatButtonModule,
+    MatDialogModule,
+    MatSelectModule,
     HttpClientModule,
+    MatAutocompleteModule,
     FormsModule,
   ], 
   providers: [],

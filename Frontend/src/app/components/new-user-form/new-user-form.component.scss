@@ -1,0 +1,71 @@
+@import "../../../styles/color";
+
+.new-user-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .title-box{
+        margin-bottom: 5px;
+        p{
+            font-family: 'Helvetica Neue', sans-serif; 
+            color: $colour_main_text;
+            font-size: 26px; 
+            font-weight: bold;  
+            line-height: 1;
+            text-align: center; 
+            border-bottom: $colour_main_text solid 3px;
+        }
+    }
+    
+    .data-column{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 15px;
+;
+
+        .data-row{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-right: 20px;  
+
+            input{
+                height: 30px;
+                min-width: 120px;
+                color: $colour_main_text;
+                background-color: transparent;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom: 3px solid;
+                border-color: $colour_accent_dark;
+
+                &:focus{
+                    outline: none;
+                }
+            
+            }
+
+            p.attribute-name { 
+                color: rgba($colour_main_text, 0.65);
+                font-family: 'Verdana', sans-serif; 
+                font-size: 18px; 
+                margin-bottom: 0;
+                 
+            }
+        }
+        button{
+            margin: 10px;
+            width: 80px;
+            height: 30px;
+            border:solid;
+            background-color: $colour_accent_dark;
+            border-radius: 8px;
+            border-width: 1px;
+            border-color: $colour_main_text;
+            color: $colour_main_text;
+        }
+    }
+}

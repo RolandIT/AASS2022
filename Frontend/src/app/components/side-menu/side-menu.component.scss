@@ -1,0 +1,25 @@
+@import "../../../styles/color";
+
+.side-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    .menu-option{
+        margin-bottom: 15px;
+
+        button{
+            margin: 10px;
+            width: 100px;
+            height: 40px;
+            border:solid;
+            background-color: $colour_accent_dark;
+            border-radius: 8px;
+            border-width: 1px;
+            border-color: $colour_main_text;
+            color: $colour_main_text;
+        }
+    }
+}

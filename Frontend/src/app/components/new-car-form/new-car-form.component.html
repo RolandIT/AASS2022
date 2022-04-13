@@ -1,0 +1,48 @@
+<div class="new-car-form">
+    <div class="title-box">
+        <p>New Car</p>
+    </div>
+    <div class="data-column">
+        <div class="data-row">
+            <input [(ngModel)]="data.car.spz">
+            <p class="attribute-name">License number</p>
+        </div>
+        <div class="data-row">
+            <input [(ngModel)]="data.car.yearOfManufacture">
+            <p class="attribute-name">Year of Manufacture</p>
+        </div>
+    </div>
+    <div class="data-column">
+        <div class="data-row">
+            <input [(ngModel)]="data.car.brand">
+            <p class="attribute-name">Type</p>
+        </div>
+        <div class="data-row">
+            <mat-form-field>
+                <input type="text"
+                    aria-label="Number"
+                    matInput
+                    [formControl]="myControl"
+                    [matAutocomplete]="auto"
+                    [(ngModel)]="ownerCustomer">
+                <mat-autocomplete #auto="matAutocomplete"
+                                    [displayWith]="displayFn">  
+                    <mat-option *ngFor="let user of users" [value]="user">
+                        {{user.name + ' ' + user.surname}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+            <!-- <select [(ngModel)]="data.car.idOwner" required>
+                <option *ngFor="let user of users" [value]="user.Id">{{user.name + ' ' + user.surname}}</option>
+            </select> -->
+            <p class="attribute-name">Owner</p>
+        </div>
+    </div>
+    <div class="data-column">
+        <div class="repair-row">
+            <button (click)="onCloseDialog()">Add</button>
+        </div>
+    </div>
+
+
+</div>
