@@ -18,7 +18,7 @@ import { customer } from 'src/app/types/customer.type';
 export class BackendService {
 
   header = new HttpHeaders();
-  url = 'http://192.168.0.222:8085';
+  url = 'http://localhost:8085';
   
 
   constructor(private http: HttpClient) {
@@ -62,6 +62,7 @@ export class BackendService {
   }
 
   addNewUser(user: RegisterCustomer){
+    console.log(user);
     return this.http.post<void>(this.url.concat(`/customer/register`), user, {headers: this.header});
   }
 
