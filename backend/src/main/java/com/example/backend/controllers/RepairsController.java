@@ -24,7 +24,6 @@ public class RepairsController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No repairs found");
         return listOfRepairs;
     }
-// add repair, add car
     @PostMapping("repairs")
     public long insertCarRepair(@RequestBody RepairBody repair){
         long newId = repairsService.insertCarRepair(new Repair(-1, repair.getDescription(),

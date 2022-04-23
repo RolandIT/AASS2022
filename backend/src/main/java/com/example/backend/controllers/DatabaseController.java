@@ -76,15 +76,12 @@ public class DatabaseController {
         Customer newCustomer = new Customer(registerForm.getName(), registerForm.getSurname(),
                 registerForm.getPhoneNumber(), registerForm.getOpNumber());
         UserCustomer loggedInId = login(registerForm.getUsername(), registerForm.getPassword());
-        long registeredId = -1;
+        long registeredId = 37;
         if(loggedInId == null){
             registeredId = registerUser(toRegister);
         }
         else if(loggedInId.getCustomer() == null){
             registeredId = loggedInId.getUser().getId();
-        }
-        else if(loggedInId.getCustomer() != null){
-            return -1;
         }
         newCustomer.setAccount_id(registeredId);
         BackendQueries registerCustomer = BackendQueries.INSERT_CUSTOMER;
