@@ -5,34 +5,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="888dd905-fce5-4522-a0aa-4427fe61ab04" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__com_fasterxml_woodstox_woodstox_core_5_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__com_sun_xml_messaging_saaj_saaj_impl_1_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__com_sun_xml_stream_buffer_streambuffer_1_5_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__com_sun_xml_ws_jaxws_rt_2_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__com_sun_xml_ws_policy_2_7_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__jakarta_jws_jakarta_jws_api_2_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__jakarta_platform_jakarta_jakartaee_api_8_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__jakarta_xml_soap_jakarta_xml_soap_api_1_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__jakarta_xml_ws_jakarta_xml_ws_api_2_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__org_glassfish_external_management_api_3_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__org_glassfish_gmbal_gmbal_4_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__org_glassfish_ha_ha_api_3_1_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__org_glassfish_pfl_pfl_basic_4_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__org_glassfish_pfl_pfl_tf_4_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__org_jvnet_mimepull_mimepull_1_9_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/Backend-SOAP.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/controllers/BackendQueries.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/controllers/DatabaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/models/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/models/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/models/CustomerFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/models/LoginBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/models/Part.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/models/RegisterCar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/models/RegisterForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/models/RegisterUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/models/Repair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/models/RepairBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/models/UserCustomer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/services/CarService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/services/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/services/RepairsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/services/impl/CarServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/services/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/services/impl/RepairServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/services/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend-SOAP/src/main/java/ws/CarServicePublisher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/car-card/car-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/car-card/car-card.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/car-card/car-card.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/car-card/car-card.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/car-detail/car-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/car-detail/car-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/car-detail/car-detail.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/car-detail/car-detail.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/car-detail/car-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/car-detail/car-detail.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/header/header.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/header/header.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/home/home.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/home/home.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/repair-card/repair-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/repair-card/repair-card.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/repair-card/repair-card.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/repair-card/repair-card.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/repair-card/repair-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/repair-card/repair-card.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/side-menu/side-menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/side-menu/side-menu.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/side-menu/side-menu.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/side-menu/side-menu.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/components/side-menu/side-menu.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/components/side-menu/side-menu.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/services/backend/backend.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/services/backend/backend.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/services/data/data.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/services/data/data.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/types/car.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/types/car.type.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/types/customer.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/types/customer.type.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/types/repair.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/types/repair.type.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/app/types/user.type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/app/types/user.type.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +92,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
